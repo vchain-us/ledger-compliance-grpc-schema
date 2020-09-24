@@ -9,4 +9,6 @@ option go_package = "github.com/vchain-us/ledger-compliance/server/schema";
 service LcService {
 	rpc Set (immudb.schema.KeyValue) returns (immudb.schema.Index){};
 	rpc Get (immudb.schema.Key) returns (immudb.schema.Item){};
+	rpc SafeSet(immudb.SafeSetOptions) returns (immudb.Proof){}
+	rpc SafeGet(immudb.SafeGetOptions) returns (immudb.SafeItem){};
 }
